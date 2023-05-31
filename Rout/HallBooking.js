@@ -62,7 +62,7 @@ router.get("/booked-rooms",async (req,res)=>{
         let rooms=await AvailableRooms()
         let data=[]
         if(rooms.length==0){
-          return res.status(400).json({data:"Sorry no rooms Available Now"})
+          return res.status(400).json({data:"Sorry no rooms Booked Now"})
       }
       rooms.forEach((element) => {
         data.push({RoomName:element.RoomName,
@@ -85,7 +85,7 @@ router.get("/booked-customers",async(req,res)=>{
         let rooms=await BookedRooms()
         let data=[]
   if(rooms.length==0){
-      return res.status(400).json({data:"Sorry no rooms Available Now"})
+      return res.status(400).json({data:"Sorry no rooms Booked Now"})
   }
   rooms.forEach((element) => {
     data.push({customerName:element.customerName,
@@ -109,7 +109,7 @@ router.get("/no_of_times-boked",async (req,res)=>{
         let data=[]
         let count;
   if(rooms.length==0){
-      return res.status(400).json({data:"Sorry no rooms Available Now"})
+      return res.status(400).json({data:"Sorry no rooms Booked Now"})
   }
   rooms.forEach((element) => {
     count=0;
