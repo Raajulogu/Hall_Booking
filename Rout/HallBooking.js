@@ -72,7 +72,7 @@ router.get("/booked-rooms",async (req,res)=>{
                 startTime:element.startTime,
                 endTime:element.endTime})
       });
-  res.status(200).json({data:data})
+  res.status(200).json({data:[...data]})
       } catch (error) {
         console.log(error);
         res.status(500).json({data:"Internal Server Error"})
